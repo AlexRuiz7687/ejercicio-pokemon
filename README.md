@@ -1,3 +1,7 @@
+#ENLACES A GITHUB
+Pages: https://alexruiz7687.github.io/ejercicio-pokemon/
+Repositorio: https://github.com/AlexRuiz7687/ejercicio-pokemon
+
 # REFERENCIAS DE DISEÑO
 Se consultó el tutorial "Free code camp" en youtube para conocer nuevas técnicas de estilizado CSS y ver 
 un ejemplo de cómo se maqueta una página web que luego pasará a ser dinámica gracias a los datos 
