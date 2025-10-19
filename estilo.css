@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-
+/*Globales*/
 :root{
     --clr-black: #1c1c1c;
-    --clr-gray: #ececec;
+    --clr-gray: #d4d4d4;
     --clr-white:#f7f7f7;
 
     --type-normal: #A8A878;
@@ -11,16 +11,16 @@
     --type-grass: #78C850;
     --type-electric: #F8D030;
     --type-ice: #98D8D8;
-    --type-fighting: #C03028;
-    --type-poison:#A040A0;
+    --type-fighting: #ff6057;
+    --type-poison:#d977d9;
     --type-ground: #e0c068;
     --type-flying: #a890f0;
     --type-psychic: #F85888;
     --type-bug: #A8B820;
-    --type-rock: #B84038;
-    --type-ghost: #795898;
-    --type-dark: #705848;
-    --type-dragon: #7038F8;
+    --type-rock: #ed574d;
+    --type-ghost: #af85d6;
+    --type-dark: #ba9e8c;
+    --type-dragon: #8e5eff;
     --type-steel: #B8B8D0;
     --type-fairy: #F0B6BC;
 }
@@ -33,6 +33,7 @@
     font-family: 'Rubik', sans-serif;
 }
 
+/*Etiquetas*/
 ul{
     list-style-type: none;
 }
@@ -45,19 +46,26 @@ button{
 
 body{
     min-height: 100vh;
-    background-color: var(--clr-black);
+    background: #0e013e;
+    background: linear-gradient(160deg,rgb(1, 13, 34) 0%, rgb(49, 2, 102) 35%, rgba(3, 107, 128, 1) 100% );
+    /* background-color: var(--clr-black); */
+    display: grid;
+    justify-content: center;
+    
+
 }
 
 header{
     padding-block: 1rem;
-    box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, .5);
-    margin-bottom: 2rem;
+    /* box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, .5); */
     display: grid;
     grid-template-rows: 1fr 2fr;
     justify-items:center ;
+    align-items: center;
     gap: 10px;
+    width: 100%;
+    /* max-width: 1200px; */
 
-    
     /* background-color: var(--clr-white); */
 }
 
@@ -67,59 +75,63 @@ main{
     margin: 0 auto;
 }
 
-
-
 fieldset{
     border: none;
 }
 
+/*Clases*/
 .cabecera {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    justify-items: center;
     gap: 1rem;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto 3vh auto;
-    padding: 0;
+    margin: 0 auto 2vh auto;
+    padding: 0 2vh;
 }
-
-
 
 .cabecera h1 {
     font-size: 1.8rem;
     text-align: center;
     color: #a890f0;
     font-weight: 400;
+    
 }
 
 .form {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--clr-black);
+    background-color: rgba(0, 0, 0, 0);
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
+    justify-content: flex-end;
     
 }
-
-
-
 
 .form input[type="text"] {
-    border: 2px solid var(--type-electric);
-    background-color: var(--clr-black);
+    border: 1.5px solid var(--type-electric);
+    background-color: rgba(0, 0, 0, 0);
     padding: 0.5rem;
-    border-radius: 1rem;
+    border-radius: 1rem 0 0 1rem;
     outline: none;
     min-width: 150px;
+    transition: min-width .3s;
     
 }
+
+.form input[type="text"]:hover,
+.form input[type="text"]:focus{
+    min-width: 200px;
+}
+
 .form input::placeholder {
-    color: var(--clr-gray); 
+    color: rgba(249, 249, 143,.5);  
     transition: color 0.3s;
 }
 
@@ -135,10 +147,10 @@ form input[type="text"]:hover,
 }
 
 .form input[type="submit"] {
-    background-color: var(--clr-black);
+    background-color: transparent;
     color: var(--type-electric);
-    border: 2px solid var(--type-electric);
-    border-radius: 1rem;
+    border: 1.5px solid var(--type-electric);
+    border-radius: 0 1rem 1rem 0;
     padding: 0.5rem 1rem;
     font-weight: 500;
     cursor: pointer;
@@ -153,8 +165,6 @@ form input[type="text"]:hover,
     box-shadow: 0 0 0.5rem rgba(0,0,0,0.2);
 }
 
-
-
 .nav{
     display: flex;
     flex-direction: column;
@@ -164,6 +174,7 @@ form input[type="text"]:hover,
     max-width: 1000px;
     margin: 0 auto;
 }
+
 .nav-list{
     display: flex;
     align-items: center;
@@ -173,7 +184,7 @@ form input[type="text"]:hover,
 .btn-header{
     background-color: var(--clr-gray);
     padding: .5rem;
-    border-radius: 100vmax;
+    /* border-radius: 100vmax; */
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 500;
@@ -199,19 +210,45 @@ form input[type="text"]:hover,
     }
     .cabecera h1 {
         text-align: left;
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+    .cabecera{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .cabecera h1 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .form {
+        justify-content: center;
+    }
+
+    .form input[type="text"] {
+        min-width: 230px;
+    }
+
+    .form input[type="text"]:hover,
+    .form input[type="text"]:focus {
+     min-width: 270px; 
     }
     
 }
 
-@media screen and (min-width: 700px){
+@media screen and (min-width: 800px){
     .pokemon-todos{
     grid-template-columns: 1fr 1fr 1fr;
     }
      .cabecera {
-        flex-direction: row;
         justify-content: space-between;
+        flex-direction: row;
+        justify-items: center;
         align-items: center;
+    
     }
 }
 
@@ -227,15 +264,22 @@ form input[type="text"]:hover,
 }
 
 .pokemon{
+    
     /* max-width: 400px; */
     border-radius: 1rem;
-    background-color: var(--clr-white);
+    border:1.5px solid #a890f0;
+    background-color: rgb(from var(--clr-white) r g b / 0.5);
     box-shadow: 0 0 3em -1rem rgba(0, 0, 0, .25);
     padding-block: 1rem;
     text-transform: uppercase;
     position: relative;
     isolation: isolate ;
     overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.pokemon:hover {
+    background-color: rgb(from var(--clr-white) r g b / 1);
 }
 
 .pokemon-info{
@@ -294,86 +338,221 @@ form input[type="text"]:hover,
     transform: translateX(-50%);
     font-size: 6rem;
     font-weight: 800;
-    color: var(--clr-gray);
+    color: rgba(from var(--clr-gray) r g b / 0.4);
+    transition: color 0.3s ease;
     z-index: -1;
+}
 
+.pokemon-id-back{
+    color: var(--clr-gray);
 }
 
 
-
-
-
+/*Tipos*/
 .normal{
+    border: 1px solid var(--type-normal);
+    background-color:rgba(0, 0, 0, 1);
+    color: var(--type-normal);
+    transition: background-color .3s;
+}
+.normal:hover, .normal:focus{
     background-color: var(--type-normal);
     color: var(--clr-black);
 }
+
+
 .fire{
+    border: 1px solid var(--type-fire);
+    background-color:rgba(0, 0, 0, 1);
+    color:var(--type-fire);
+    transition: background-color .3s;
+}
+.fire:hover, .fire:focus{
     background-color: var(--type-fire);
-    color:var(--clr-black);
+    color: var(--clr-black);
 }
+
+
+
 .water{
+    border: 1px solid var(--type-water);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-water);
+    transition: background-color .3s;
+}
+
+.water:hover, .water:focus{
     background-color: var(--type-water);
-    color:var(--clr-white);
+    color: var(--clr-black);
 }
+
+
 .grass{
+    border: 1px solid var(--type-grass);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-grass);
+    transition: background-color .3s;
+}
+.grass:hover, .grass:focus{
     background-color: var(--type-grass);
-    color:var(--clr-black);
+    color: var(--clr-black);
 }
+
+
 .electric{
+    border: 1px solid var(--type-electric);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-electric);
+    transition: background-color .3s;
+}
+.electric:hover, .electric:focus{
     background-color: var(--type-electric);
-    color:var(--clr-black);
+    color: var(--clr-black);
 }
+
 .ice{
+    border: 1px solid var(--type-ice);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-ice);
+    transition: background-color .3s;
+}
+.ice:hover, .ice:focus{
     background-color: var(--type-ice);
-    color:var(--clr-black);
+    color: var(--clr-black);
 }
+
+
 .fighting{
+    border: 1px solid var(--type-fighting);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-fighting);
+    transition: background-color .3s;
+}
+.fighting:hover, .fighting:focus{
     background-color: var(--type-fighting);
-    color:var(--clr-white);
+    color: var(--clr-black);
 }
+
 .poison{
+    border: 1px solid var(--type-poison);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-poison);
+    transition: background-color .3s;
+}
+.poison:hover, .poison:focus{
     background-color: var(--type-poison);
-    color:var(--clr-white);
+    color: var(--clr-black);
 }
+
+
 .ground{
+    border: 1px solid var(--type-ground);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-ground);
+    transition: background-color .3s;
+}
+.ground:hover, .ground:focus{
     background-color: var(--type-ground);
-    color:var(--clr-black);
+    color: var(--clr-black);
 }
+
 .flying{
+    border: 1px solid var(--type-flying);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-flying);
+    transition: background-color .3s;
+}
+.flying:hover, .flying:focus{
     background-color: var(--type-flying);
-    color:var(--clr-black);
+    color: var(--clr-black);
 }
+
 .psychic{
+    border: 1px solid var(--type-psychic);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-psychic);
+    transition: background-color .3s;
+}
+.psychic:hover, .psychic:focus{
     background-color: var(--type-psychic);
-    color:var(--clr-black);
+    color: var(--clr-black);
 }
+
 .bug{
+    border: 1px solid var(--type-bug);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-bug);
+    transition: background-color .3s;
+}
+.bug:hover, .bug:focus{
     background-color: var(--type-bug);
-    color:var(--clr-black);
+    color: var(--clr-black);
 }
+
 .rock{
+    border: 1px solid var(--type-rock);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-rock);
+    transition: background-color .3s;
+}
+.rock:hover, .rock:focus{
     background-color: var(--type-rock);
-    color:var(--clr-white);
+    color: var(--clr-black);
 }
+
 .ghost{
+    border: 1px solid var(--type-ghost);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-ghost);
+    transition: background-color .3s;
+}
+.ghost:hover, .ghost:focus{
     background-color: var(--type-ghost);
-    color:var(--clr-white);
+    color: var(--clr-black);
 }
+
 .dark{
+    border: 1px solid var(--type-dark);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-dark);
+    transition: background-color .3s;
+}
+.dark:hover, .dark:focus{
     background-color: var(--type-dark);
-    color:var(--clr-white);
+    color: var(--clr-black);
 }
+
 .dragon{
+    border: 1px solid var(--type-dragon);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-dragon);
+    transition: background-color .3s;
+}
+.dragon:hover, .dragon:focus{
     background-color: var(--type-dragon);
-    color:var(--clr-white);
+    color: var(--clr-black);
 }
+
 .steel{
-    background-color: var(--type-steel);
-    color:var(--clr-black);
+    border: 1px solid var(--type-steel);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-steel);
+    transition: background-color .3s;
 }
+.steel:hover, .steel:focus{
+    background-color: var(--type-steel);
+    color: var(--clr-black);
+}
+
 .fairy{
+    border: 1px solid var(--type-fairy);
+    background-color: rgba(0, 0, 0, 1);
+    color:var(--type-fairy);
+    transition: background-color .3s;
+}
+.fairy:hover, .fairy:focus{
     background-color: var(--type-fairy);
-    color:var(--clr-black);
+    color: var(--clr-black);
 }
  
 
