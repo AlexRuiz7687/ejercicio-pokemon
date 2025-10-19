@@ -256,11 +256,24 @@ form input[type="text"]:hover,
     padding-inline: 1rem;
     display: flex;
     justify-content: center;
+    
 }
 
 .pokemon-imagen img{
     width: 100%;
-    max-width: 6rem;
+    max-width: 10rem;
+      filter: drop-shadow(5px 5px 10px rgba(23, 1, 83, 0.5));
+}
+
+@keyframes flotar {
+  0% { transform: translateY(-5px) scale(1.05) rotate(-2deg); }
+  50% { transform: translateY(-15px) scale(1.05) rotate(0deg); }
+  100% { transform: translateY(-5px) scale(1.05) rotate(-2deg); }
+}
+
+.pokemon:hover .pokemon-imagen img {
+  animation: flotar 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.3));
 }
 
 .pokemon{
