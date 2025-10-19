@@ -193,7 +193,7 @@ form input[type="text"]:hover,
 }
 .btn-header:hover{
     transform: scale(1.1);
-    box-shadow: 0 0 1rem rgba(0, 0, 0, .15);
+    box-shadow: 0 0 1rem rgba(185, 87, 255, 0.5);
 
 }
 
@@ -280,6 +280,7 @@ form input[type="text"]:hover,
 
 .pokemon:hover {
     background-color: rgb(from var(--clr-white) r g b / 1);
+    box-shadow: 0 0 3em -1rem rgba(220, 156, 255, 0.7);
 }
 
 .pokemon-info{
@@ -366,6 +367,7 @@ form input[type="text"]:hover,
     background-color:rgba(0, 0, 0, 1);
     color:var(--type-fire);
     transition: background-color .3s;
+    
 }
 .fire:hover, .fire:focus{
     background-color: var(--type-fire);
